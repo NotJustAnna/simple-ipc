@@ -8,14 +8,11 @@ import net.notjustanna.utils.ipc.proto.Protocol
 import net.notjustanna.utils.ipc.server.connector.ServerConnectorFactory
 import net.notjustanna.utils.ipc.server.dsl.ServerBuilder
 import net.notjustanna.utils.ipc.server.impl.ServerImpl
-import java.util.concurrent.ExecutorService
 
 /**
  * Creates and configures an [IServer].
  *
- * @param serverName The server's name, sent to the client on the handshake.
- * @param port The server's port.
- * @param executor (Optional) The [ExecutorService] used to handle the clients asynchronously.
+ * @param factory The connector factory.
  * @param block The configuration of the server.
  * @return the configurated and running [IServer].
  */

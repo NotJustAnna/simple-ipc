@@ -7,19 +7,7 @@ import net.notjustanna.utils.ipc.proto.ConnectionState.*
 import net.notjustanna.utils.ipc.proto.DefaultProtocol
 import net.notjustanna.utils.ipc.proto.Protocol
 import net.notjustanna.utils.ipc.server.connector.ServerConnection
-import net.notjustanna.utils.ipc.server.impl.ServerImpl
-import java.util.concurrent.ExecutorService
 
-/**
- * Creates an [ServerImpl] that awaits connections on the specified [port].
- *
- * @param serverName The server's name, sent to the client on the handshake.
- * @param port The server's port.
- * @param calls Map used to resolve the calls to their handlers.
- * @param executor (Optional) The [ExecutorService] used to handle the clients asynchronously.
- * @param extensions (Optional) Map used to resolve unknown opcode calls to their handlers.
- * @param backlog (Optional) Maximum length of the queue of incoming connections on the socket.
- */
 class ConnectionHandler<T>(
     val serverName: String,
     private val connection: ServerConnection<T>,
